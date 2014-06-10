@@ -1,0 +1,25 @@
+#Tomcat auto-start
+#description: Auto-starts tomcat
+#processname: tomcat
+#pidfile: /var/run/tomcat.pid
+ 
+#this path should point to your JAVA_HOME Directory
+export JAVA_HOME=/opt/java
+USER=jenkins
+case $1 in
+ 
+start)
+   /bin/su - ${USER} -c sh /opt/tomcat/bin/startup.sh
+  ;;
+ 
+stop)  
+  /bin/su - ${USER} -c sh /opt/tomcat/bin/shutdown.sh
+  ;;
+ 
+restart)
+  /bin/su - ${USER} -c sh /opt/tomcat/bin/shutdown.sh
+  /bin/su - ${USER} -c sh /opt/tomcat/bin/startup.sh
+  ;;
+esac
+    
+exit 0
