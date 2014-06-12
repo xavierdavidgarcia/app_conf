@@ -20,7 +20,7 @@ LOG_DIR=/var/log/$NAME
 DATA_DIR=/var/lib/$NAME
 WORK_DIR=/tmp/$NAME
 CONFIG_FILE=/etc/$NAME/elasticsearch.yml
-DAEMON_OPTS="-p $PID_FILE -Des.config=$CONFIG_FILE -Des.path.home=$ES_HOME -Des.path.logs=$LOG_DIR -Des.path.data=$DATA_DIR -Des.path.work=$WORK_DIR"
+DAEMON_OPTS="-d -p $PID_FILE -Des.config=$CONFIG_FILE -Des.path.home=$ES_HOME -Des.path.logs=$LOG_DIR -Des.path.data=$DATA_DIR -Des.path.work=$WORK_DIR"
 
 
 test -x $DAEMON || exit 0
